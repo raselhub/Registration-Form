@@ -1,0 +1,156 @@
+# Registration-Form
+#A sample Registration from with google sheetdb api
+
+<! DOCTYPE html>
+<!--Developed by Rasel, Date: 07/22/2022-->
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="designForm.css" type="text/css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>   
+         <meta name="viewport" contents="width=device-width, intial-scale=1.0"> 
+    </head>
+<body> 
+    <form action="https://sheetdb.io/api/v1/bae88fb0f22lg" method="post" id="sheetdb-form">
+    <div class="container">
+        <div class="title">Registration</div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" name="data[Full Name]" required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter your username" name="data[Username]" required> 
+                </div>
+                 <div class="input-box">
+                    <span class="details">Email ID</span>
+                    <input type="email" placeholder="Enter your email id" name="data[Email ID]" required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter your contact Number" name="data[Phone Number]" required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Date of Birth(DOB)</span>
+                    <input type="date" placeholder="Enter your DOB" name="data[Date of Birth]" required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Address</span>
+                    <input type="text" placeholder="Enter your address" name="data[Address]" required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="text" placeholder="Enter your password" name="data[Password]" required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="text" placeholder="Confirm your password" name="data[Confirm Password]" required> 
+                </div>
+            </div>
+            <div class="gender-details">
+                <input type="radio" name="data[Gender]" id="dot-1">
+                <input type="radio" name="data[Gender]" id="dot-2">
+                <input type="radio" name="data[Gender]" id="dot-3">
+                <input type="radio" name="data[Gender]" id="dot-4">
+                <span class="gender-details">Gender</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Male</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Female</span>
+                    </label>
+                    <label for="dot-3">
+                        <span class="dot three"></span>
+                        <span class="gender">LGBTQ</span>
+                    </label>
+                    <label for="dot-4">
+                        <span class="dot four"></span>
+                        <span class="gender">Prefer not to say</span>
+                    </label>
+                   
+                </div>
+            </div>
+            <div class= "button">  
+                <!-- <i class='fa fa-registered'></i> -->
+                <input type="submit" value= "Register">
+            </div>
+        </form>
+    </div>
+    
+<!--
+    <div class="transfer-link vertical-align" *ngIf="showTransferLink" qa-name="transfer-link">
+      <a class="vertical-align" routerLink="/Transfers">
+        <mat-icon>sync_alt</mat-icon>
+        <div>
+          Transfer
+        </div>
+      </a>
+    </div>
+ </div>
+-->
+    
+    
+<!--
+    <script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='https://www.google.com/';}"></iframe>
+<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerRZ8vDeRbEIFhRqUFfVBlhj6djzSDJi69GaAH8Ia50nwqJw/formResponse" method="post" target="hidden_iframe">
+-->
+    
+<!--
+    <script type="text/javascript">
+        function myfunc(event) {
+            event.preventDefault();
+            
+            var full_name = document.getElementById("full_name").value;
+            var username = document.getElementById("username").value;
+            var email_id = document.getElementById("email_id").value;
+            var phone_number = document.getElementById("phone_number").value;
+            var date_of_birth = document.getElementById("date_of_birth").value;
+            var address = document.getElementById("address").value;
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+            var temp_gender = document.getElementById("gender");
+            
+            temp_gender.checked ? gender = "Male" : gender = "Female" : gender = "LGBTQ" : gender = "Prefer not to say";
+            localStorage.setItem('ls_full_name', full_name);
+            localStorage.setItem('ls_username', username);
+            localStorage.setItem('ls_email_id', email_id);
+            localStorage.setItem('ls_phone_number', phone_number);
+            localStorage.setItem('ls_date_of_birth', date_of_birth);
+            localStorage.setItem('ls_address', address);
+            localStorage.setItem('ls_password', password);
+            localStorage.setItem('ls_confirm_password', confirm_password);
+            localStorage.setItem('ls_gender', gender);
+        }
+    </script>
+-->
+        <!-- javascript -->
+    <script>
+        var form = Document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e=>{
+        e.preventDefault();
+        fetch(form.action, {
+            method : "POST",
+            body: new FormData(document.getElementById("sheetdb-form")),
+        }).then(
+            response => response.json()
+        ).then((html) => {
+            //we can put any js code
+            window.open('d.html', '_blank');
+        });
+    });
+        
+        
+        </script>    
+    
+ </body>    
+
+
+</html>
